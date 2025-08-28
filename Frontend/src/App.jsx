@@ -7,6 +7,7 @@ import Intro2 from "./Components/intro2";
 import Intro3 from "./Components/Intro3";
 import Staff from "./Components/Staff";
 import PlanProject from "./Pages/PlanProject";
+import BudgetProgram from "./Pages/BudgetProgram";
 
 
 
@@ -23,6 +24,7 @@ const App = () => {
           <Route path='/intro3' element={<Intro3 />} />
           <Route path='/Staff' element={<Staff/>} />
           <Route path="/PlanProject" element={<PlanProject />} />
+          <Route path="/BudgetProgram" element={<BudgetProgram />} />
 
 
         </Routes>

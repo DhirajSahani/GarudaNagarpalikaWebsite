@@ -39,8 +39,8 @@ const Navbar = () => {
       name: "Program and Project",
       link: "#",
       sub: [
-        { name: "Plan & Project", link: "/program/plan" },
-        { name: "Budget and Program", link: "/program/budget" }
+        { name: "Plan & Project", link: "/PlanProject" },
+        { name: "Budget and Program", link: "/BudgetProgram" }
       ]
     },
     {
