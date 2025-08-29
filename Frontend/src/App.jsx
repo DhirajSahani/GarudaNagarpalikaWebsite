@@ -8,6 +8,8 @@ import Intro3 from "./Components/Intro3";
 import Staff from "./Components/Staff";
 import PlanProject from "./Pages/PlanProject";
 import BudgetProgram from "./Pages/BudgetProgram";
+import EgovService from "./Pages/EgovService";
+import PublicPTN from "./Pages/PublicPTN";
 
 
 
@@ -25,6 +27,8 @@ const App = () => {
           <Route path='/Staff' element={<Staff/>} />
           <Route path="/PlanProject" element={<PlanProject />} />
           <Route path="/BudgetProgram" element={<BudgetProgram />} />
+          <Route path="/EgovService" element={<EgovService />} />
+          <Route path="/PublicPTN" element={<PublicPTN />} />
 
 
         </Routes>

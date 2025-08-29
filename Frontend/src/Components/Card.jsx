@@ -1,30 +1,32 @@
 import React from "react";
 import kanthmuni from "../assets/kanthmuni.PNG";
+import punampic from "../assets/punampic.PNG";
+import alampic from "../assets/alampic.PNG";
 
 const cardData = [
   {
-    name: "Kanthmani Prasad Jaiswal",
+    name: "कण्ठमणि प्रसाद जयसवाल",
     title: "नगर प्रमुख",
-    contact: "@kanthmaniprasad.jaiswal.3",
+    contact: "9855042207",
     image: kanthmuni,
   },
   {
-      name: "Kanthmani Prasad Jaiswal",
-    title: "नगर प्रमुख",
-    contact: "@kanthmaniprasad.jaiswal.3",
-    image: kanthmuni,
+      name: "पुनम कुमारी चौधरी",
+    title: "उप– प्रमुख",
+    contact: "9855042000",
+    image: punampic,
   },
   {
-      name: "Kanthmani Prasad Jaiswal",
-    title: "नगर प्रमुख",
-    contact: "@kanthmaniprasad.jaiswal.3",
-    image: kanthmuni,
+      name: "मो.मुस्ताक आलम",
+    title: "प्रमुख प्रशासकीय अधिकृत",
+    contact: "9855089111",
+    image: alampic,
   },
 ];
 
 const Card = () => {
   return (
-    <div className="flex flex-wrap justify-center items-center gap-6 w-full px-4 py-6">
+    <div className="flex flex-wrap justify-center  items-center gap-6 w-full px-4 py-6">
       {cardData.map((card, index) => (
         <div
           key={index}
@@ -40,9 +42,9 @@ const Card = () => {
           </div>
 
           {/* Text */}
-          <div className="flex flex-col items-center p-4">
-            <p className="font-medium text-lg">{card.name}</p>
-            <p className="text-gray-500 text-sm">{card.title}</p>
+          <div className="flex flex-col  items-center p-4">
+            <p className="font-bold text-lg">{card.name}</p>
+            <p className="text-gray-500  text-sm">{card.title}</p>
             {card.contact === "message" ? (
               <button className="border text-sm text-gray-600 border-gray-400 w-28 h-8 rounded-full mt-4 hover:bg-gray-100">
                 {card.contact}

@@ -17,13 +17,19 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
+  const [language, setLanguage] = useState("english"); // default Nepali
 
   useEffect(() => {
     const timer = setTimeout(() => setShowPopup(true), 1000);
     return () => clearTimeout(timer);
   }, []);
 
-  const menuItems = [
+  const toggleLanguage = () => {
+    setLanguage(language === "nepali" ? "english" : "nepali");
+  };
+
+  // Example translated menu (you can expand for full site text)
+  const menuItems = language === "english" ? [
     { name: "Home", link: "/" },
     {
       name: "Introduction",
@@ -36,61 +42,86 @@ const Navbar = () => {
     },
     { name: "Ward Profile", link: "/ward-profile" },
     {
-      name: "Program and Project",
+      name: "Programs & Projects",
       link: "#",
       sub: [
-        { name: "Plan & Project", link: "/PlanProject" },
-        { name: "Budget and Program", link: "/BudgetProgram" }
+        { name: "Plans & Projects", link: "/PlanProject" },
+        { name: "Budget & Programs", link: "/BudgetProgram" }
       ]
     },
     {
       name: "Reports",
       link: "#",
       sub: [
-        { name: "Annual", link: "/reports/annual" },
-        { name: "Financial", link: "/reports/financial" }
+        { name: "Annual Progress Report", link: "/reports/annual" },
+        { name: "Trimester Progress Report", link: "/reports/financial" },
+        { name: "Audit Report", link: "/reports/financial" },
+        { name: "Monitoring Report", link: "/reports/financial" },
+          { name: "Public Hearing", link: "/reports/financial" },
+            { name: "Public Aduit", link: "/reports/financial" },
+              { name: "Social Audit", link: "/reports/financial" },
+                { name: "Publications", link: "/reports/financial" }
+
       ]
     },
     {
-      name: "eGov Services",
+       name: "eGov Services",
+        link: "#",
+        sub: [
+          { name: "eGov Services", link: "/EgovService" },
+        { name: "Vital Registration", link: "/reports/annual" },
+        { name: "Social Security", link: "/reports/annual" }
+       ] 
+      },
+
+    {
+       name: "Notices & Information",
+        link: "#",
+        sub:[
+        { name: "News & Notices", link: "/notice" },
+        { name: "Public Procurement/Tenders Notice", link: "/PublicPTN" },
+        { name: "Acts, Laws & Directives", link: "/notice" },
+        { name: "Tax & Fees", link: "/notice" }
+       
+        ]
+
+      },
+    { name: "Gallery", link: "/gallery" },
+    { name: "Contact", link: "/contact" },
+    { name: "Branches", link: "/branch" },
+  ] : [
+    { name: "गृहपृष्ठ", link: "/" },
+    {
+      name: "परिचय",
       link: "#",
       sub: [
-        { name: "Service 1", link: "/egov/service1" },
-        { name: "Service 2", link: "/egov/service2" }
+        { name: "संक्षिप्त परिचय", link: "/intro" },
+        { name: "संगठन चार्ट", link: "/intro/chart" },
+        { name: "कर्मचारी", link: "/Staff" }
+      ]
+    },
+    { name: "वडा प्रोफाइल", link: "/ward-profile" },
+    {
+      name: "कार्यक्रम र परियोजना",
+      link: "#",
+      sub: [
+        { name: "योजना तथा परियोजना", link: "/PlanProject" },
+        { name: "बजेट र कार्यक्रम", link: "/BudgetProgram" }
       ]
     },
     {
-      name: "Notice and Information",
+      name: "प्रतिवेदन",
       link: "#",
       sub: [
-        { name: "Notices", link: "/notice" },
-        { name: "Circulars", link: "/notice/circulars" }
+        { name: "वार्षिक", link: "/reports/annual" },
+        { name: "वित्तीय", link: "/reports/financial" }
       ]
     },
-    {
-      name: "Gallery",
-      link: "#",
-      sub: [
-        { name: "Photos", link: "/gallery/photos" },
-        { name: "Videos", link: "/gallery/videos" }
-      ]
-    },
-    {
-      name: "Contact",
-      link: "#",
-      sub: [
-        { name: "Offices", link: "/contact/offices" },
-        { name: "Phone Numbers", link: "/contact/phones" }
-      ]
-    },
-    {
-      name: "शाखाहरू",
-      link: "#",
-      sub: [
-        { name: "Branch 1", link: "/branch/1" },
-        { name: "Branch 2", link: "/branch/2" }
-      ]
-    }
+    { name: "ई-सरकार सेवा", link: "/egov" },
+    { name: "सूचना तथा जानकारी", link: "/notice" },
+    { name: "ग्यालरी", link: "/gallery" },
+    { name: "सम्पर्क", link: "/contact" },
+    { name: "शाखाहरू", link: "/branch" },
   ];
 
   return (
@@ -106,32 +137,46 @@ const Navbar = () => {
       )}
 
       {/* Top Contact Bar */}
-      <div className='flex justify-end bg-red-600 text-white p-2 text-sm md:text-base gap-4'>
-        <p className='flex items-center gap-2'>
-          <img className='w-7 h-7 object-contain' src={Coin} alt="Call Icon" />
-          055-565201
-        </p>
-        <p className='flex items-center gap-2'>
-          <img className='w-7 h-7 object-contain' src={Email} alt="Email Icon" />
-          itofficer.garudamun@gmail.com / info@garudamun.gov.np
-        </p>
+      <div className='flex justify-between items-center bg-red-600 text-white p-2 text-sm md:text-base gap-4'>
+        <div className='flex gap-4'>
+          <p className='flex items-center gap-2'>
+            <img className='w-7 h-7 object-contain' src={Coin} alt="Call Icon" />
+            055-565201
+          </p>
+          <p className='flex items-center gap-2'>
+            <img className='w-7 h-7 object-contain' src={Email} alt="Email Icon" />
+            itofficer.garudamun@gmail.com / info@garudamun.gov.np
+          </p>
+        </div>
+        {/* Language Toggle */}
+        <button
+          onClick={toggleLanguage}
+          className="bg-white text-red-600 px-3 py-1 rounded shadow hover:bg-gray-100 text-xs sm:text-sm"
+        >
+          {language === "nepali" ? "English" : "नेपाली"}
+        </button>
       </div>
 
       {/* Header / Navbar */}
-      <nav className="flex items-center p-4 md:p-6 bg-white shadow-md gap-2 relative">
+      <nav className="flex items-center p-4 md:p-6 bg-pink-100 shadow-md gap-2 relative">
         <img src={logo} alt="Logo" className="h-12 w-14 sm:h-16 sm:w-20 md:h-20 md:w-24 cursor-pointer" onClick={() => navigate('/')} />
         <p className="text-base sm:text-lg md:text-2xl font-bold text-red-700 ml-2">
-          Garuda Municipality <br className="hidden sm:block" />
-          मधेश प्रदेश, नेपाल <br className="hidden sm:block" />
-          Government of Nepal
+          {language === "nepali" ? (
+            <>
+              गरुडा नगरपालिका <br className="hidden sm:block" />
+              मधेश प्रदेश, नेपाल <br className="hidden sm:block" />
+              नेपाल सरकार
+            </>
+          ) : (
+            <>
+              Garuda Municipality <br className="hidden sm:block" />
+              Madhesh Province, Nepal <br className="hidden sm:block" />
+              Government of Nepal
+            </>
+          )}
         </p>
         <div className="ml-auto hidden md:block">
           <img src={munpic} alt="Municipality" className="h-12 sm:h-16 md:h-20 w-auto" />
-        </div>
-        <div className="hidden sm:block ml-4">
-          <p className="text-sm sm:text-base md:text-lg font-bold text-gray-700">
-            गरुडा नगरपालिका <br /> नेपाल सरकार
-          </p>
         </div>
         <div className="hidden sm:block ml-2">
           <img src={flag} alt='Flag' className='h-12 sm:h-16 md:h-20 w-auto' />
@@ -141,27 +186,29 @@ const Navbar = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
           </svg>
         </button>
-        {menuOpen && (
-          <div className="absolute top-full left-0 w-full bg-red-700 text-white md:hidden z-50">
-            <ul className="flex flex-col gap-2 p-4 text-sm">
-              {menuItems.map((item, idx) => (
-                <li key={idx}>
-                  <details>
-                    <summary className="cursor-pointer">{item.name}</summary>
-                    {item.sub && (
-                      <ul className="pl-4 mt-1 flex flex-col gap-1">
-                        {item.sub.map((subItem, subIdx) => (
-                          <li key={subIdx}><Link to={subItem.link}>{subItem.name}</Link></li>
-                        ))}
-                      </ul>
-                    )}
-                  </details>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
       </nav>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="bg-red-700 text-white md:hidden z-50">
+          <ul className="flex flex-col gap-2 p-4 text-sm">
+            {menuItems.map((item, idx) => (
+              <li key={idx}>
+                <details>
+                  <summary className="cursor-pointer">{item.name}</summary>
+                  {item.sub && (
+                    <ul className="pl-4 mt-1 flex flex-col gap-1">
+                      {item.sub.map((subItem, subIdx) => (
+                        <li key={subIdx}><Link to={subItem.link}>{subItem.name}</Link></li>
+                      ))}
+                    </ul>
+                  )}
+                </details>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {/* Desktop Menu */}
       <div className="bg-red-700 text-white p-4 hidden md:block">
@@ -187,20 +234,24 @@ const Navbar = () => {
 
       {/* News Section */}
       <div className="flex flex-col sm:flex-row overflow-hidden bg-black text-white gap-2 items-center p-2">
-        <p className='font-bold text-lg md:text-2xl'>सूचना तथा समाचार |</p>
+        <p className='font-bold text-lg md:text-2xl'>
+          {language === "nepali" ? "सूचना तथा समाचार |" : "News & Notices |"}
+        </p>
         <marquee className="whitespace-nowrap px-4 py-2 text-sm md:text-base">
-          स्वास्थ्य विमा सम्बन्धमा । कार्यालय सहयोगी र स्वीपरको अन्तिम नतिजा प्रकाशन सम्बन्धी सूचना ।
+          {language === "nepali"
+            ? "स्वास्थ्य विमा सम्बन्धमा । कार्यालय सहयोगी र स्वीपरको अन्तिम नतिजा प्रकाशन सम्बन्धी सूचना ।"
+            : "Regarding Health Insurance. Notice of publication of final results for Office Assistant and Sweeper."}
         </marquee>
       </div>
 
+      {/* Other Sections */}
       <ImageSlider />
       <div className='p-6 md:p-10'>
         <Card />
       </div>
-
       {/*Inrto section */}
-      <div className='flex flex-col gap-4 md:gap-0 md:flex-row justify-between border-t border-b border-gray-300'> <div className='p-6 md:p-10 gap-4'> <h1 className='font-bold text-base md:text-xl'>संक्षिप्त परिचय</h1> <p className='p-2 text-sm md:text-base leading-relaxed'> भौगोलिक अवस्था :- संघिय लोकतान्त्रिक गणतन्त्र नेपालको मधेश प्रदेश <br /> अन्तर्गत पर्ने तराई क्षेत्रको जिल्ला रौतहट सदरमुकाम गौर भन्दा उतर २२ कि.मी... </p> <Link to="/intro" className="text-blue-600 underline">Read More</Link> </div> <div className='flex-col md:flex-row flex'> <div className='p-6 md:p-10 gap-4'> <h1 className='font-bold text-base md:text-xl'>१३औं अधिवेशन ९औं बजेट</h1> <p className='p-2 text-sm md:text-base leading-relaxed'> गरुडा नगरपालिकाको १३औं नगर सभा तथा नवौं बजेट अधिवेशन<br /> २०८२ असार ६ गते, शुक्रबार सफलतापूर्वक सम्पन्न भएको छ । नगरसभाको अध्यक्षता गरुडा नगरपालिकाका नगरप्रमुख कन्थमणी प्रसाद </p> <Link to="/intro2" className="text-blue-600 underline">Read More</Link> </div> </div> <div className='flex-col md:flex-row flex'> <div className='p-6 md:p-10 gap-4'> <h1 className='font-bold text-base md:text-xl'>गरुडा नगरपालिकाको नगर सभाको १२ औ <br /> अधिवेशनको बैठक सम्पन्न</h1> <p className='p-2 text-sm md:text-base leading-relaxed'> रौतहट जिल्लाको गरुडा नगरपालिका आफ्नो हिउँदे अधिवेशन सोमबार सम्पन्न गरेको छ । गरुडा नगरपालिकाको सभाहलमा एक कार्यक्रमका बीच नगरसभाको (१२)<br /> बाह्रौँ अधिवेशन–२०८१ सम्पन्न गरेको हो । गरुडा नगरपालिकाको .... </p> <Link to="/intro3" className="text-blue-600 underline">Read More</Link> </div> </div> </div>
-      {/* ...rest sections */}
+      <div className='flex flex-col bg-blue-50 gap-4 md:gap-0 md:flex-row justify-between border-t border-b border-gray-300'> <div className='p-6 md:p-10 gap-4'> <h1 className='font-bold text-base md:text-xl'>संक्षिप्त परिचय</h1> <p className='p-2 text-sm md:text-base leading-relaxed'> भौगोलिक अवस्था :- संघिय लोकतान्त्रिक गणतन्त्र नेपालको मधेश प्रदेश <br /> अन्तर्गत पर्ने तराई क्षेत्रको जिल्ला रौतहट सदरमुकाम गौर भन्दा उतर २२ कि.मी... </p> <Link to="/intro" className="text-blue-600 underline">Read More</Link> </div> <div className='flex-col md:flex-row flex'> <div className='p-6 md:p-10 gap-4'> <h1 className='font-bold text-base md:text-xl'>१३औं अधिवेशन ९औं बजेट</h1> <p className='p-2 text-sm md:text-base leading-relaxed'> गरुडा नगरपालिकाको १३औं नगर सभा तथा नवौं बजेट अधिवेशन<br /> २०८२ असार ६ गते, शुक्रबार सफलतापूर्वक सम्पन्न भएको छ । नगरसभाको अध्यक्षता गरुडा नगरपालिकाका नगरप्रमुख कन्थमणी प्रसाद </p> <Link to="/intro2" className="text-blue-600 underline">Read More</Link> </div> </div> <div className='flex-col md:flex-row flex'> <div className='p-6 md:p-10 gap-4'> <h1 className='font-bold text-base md:text-xl'>गरुडा नगरपालिकाको नगर सभाको १२ औ <br /> अधिवेशनको बैठक सम्पन्न</h1> <p className='p-2 text-sm md:text-base leading-relaxed'> रौतहट जिल्लाको गरुडा नगरपालिका आफ्नो हिउँदे अधिवेशन सोमबार सम्पन्न गरेको छ । गरुडा नगरपालिकाको सभाहलमा एक कार्यक्रमका बीच नगरसभाको (१२)<br /> बाह्रौँ अधिवेशन–२०८१ सम्पन्न गरेको हो । गरुडा नगरपालिकाको .... </p> <Link to="/intro3" className="text-blue-600 underline">Read More</Link> </div> </div> </div>
+
       <div className='flex flex-col md:flex-row gap-4 md:gap-0 justify-between border-b border-gray-300'>
         <NoticePage />
         <OfficialLinksPage />
