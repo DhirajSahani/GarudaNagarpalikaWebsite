@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../assets/logo.png';
 import munpic from '../assets/munpic.jpeg';
-import flag from '../assets/flag.gif';
+import Flag from '../assets/Flag.gif';
 import { Link, useNavigate } from 'react-router-dom';
 import Coin from '../assets/Coin.png';
-import Email from '../assets/Email.png';
+import Email from '../assets/Email.png';git 
 import notice from '../assets/notice.jpg';
 
 const BudgetProgram = () => {
@@ -139,7 +139,7 @@ const BudgetProgram = () => {
           </p>
         </div>
         <div className="hidden sm:block ml-2">
-          <img src={flag} alt='Flag' className='h-10 sm:h-14 md:h-20 w-auto' />
+          <img src={Flag} alt='Flag' className='h-10 sm:h-14 md:h-20 w-auto' />
         </div>
 
         {/* Mobile Menu Button */}
