@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from '../assets/logo.png';
 import munpic from '../assets/munpic.jpeg';
-import flag from '../assets/flag.gif';
+import Flag from '../assets/Flag.gif';
 import planimg from '../assets/planimg.jpg';
 import planimg2 from '../assets/planimg2.jpeg'; 
 import planimg3 from '../assets/planimg3.jpeg';
@@ -44,7 +44,7 @@ const PlanProject = () => {
                     </p>
                 </div>
                 <div className="hidden sm:block ml-2">
-                    <img src={flag} alt='Flag' className='h-12 sm:h-16 md:h-20 w-auto' />
+                    <img src={Flag} alt='Flag' className='h-12 sm:h-16 md:h-20 w-auto' />
                 </div>
                 <button
                     className="ml-auto md:hidden p-2 focus:outline-none"

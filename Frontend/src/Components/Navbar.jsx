@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../assets/logo.png';
 import munpic from '../assets/munpic.jpeg';
-import flag from '../assets/flag.gif';
+import Flag from '../assets/Flag.gif';
 import Card from './Card';
 import ImageSlider from './ImageSlider';
 import { Link, useNavigate } from 'react-router-dom';
@@ -179,7 +179,7 @@ const Navbar = () => {
           <img src={munpic} alt="Municipality" className="h-12 sm:h-16 md:h-20 w-auto" />
         </div>
         <div className="hidden sm:block ml-2">
-          <img src={flag} alt='Flag' className='h-12 sm:h-16 md:h-20 w-auto' />
+          <img src={Flag} alt='Flag' className='h-12 sm:h-16 md:h-20 w-auto' />
         </div>
         <button className="ml-auto md:hidden p-2 focus:outline-none" onClick={() => setMenuOpen(!menuOpen)}>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
