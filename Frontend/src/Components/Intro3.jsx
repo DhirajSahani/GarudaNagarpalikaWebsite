@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from '../assets/logo.png';
 import munpic from '../assets/munpic.jpeg';
-import flag from '../assets/flag.gif';
+import Flag from '../assets/Flag.gif';
 import { Link, useNavigate } from 'react-router-dom';
 import Gallery from './Gallery';
 
@@ -42,7 +42,7 @@ const Intro3 = () => {
 
                 {/* Flag */}
                 <div className="hidden sm:block ml-2">
-                    <img src={flag} alt='Flag' className='h-12 sm:h-16 md:h-20 w-auto' />
+                    <img src={Flag} alt='Flag' className='h-12 sm:h-16 md:h-20 w-auto' />
                 </div>
 
                 {/* Mobile Menu Button */}
