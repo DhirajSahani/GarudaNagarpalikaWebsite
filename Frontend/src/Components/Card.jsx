@@ -1,5 +1,5 @@
 import React from "react";
-import kanthmuni from "../assets/kanthmuni.PNG";
+import Kanthmuni from "../assets/Kanthmuni.PNG";
 import punampic from "../assets/punampic.PNG";
 import alampic from "../assets/alampic.PNG";
 
@@ -8,7 +8,7 @@ const cardData = [
     name: "कण्ठमणि प्रसाद जयसवाल",
     title: "नगर प्रमुख",
     contact: "9855042207",
-    image: kanthmuni,
+    image: Kanthmuni,
   },
   {
       name: "पुनम कुमारी चौधरी",
