@@ -4,7 +4,7 @@ import munpic from '../assets/munpic.jpeg';
 import Flag from '../assets/Flag.gif';
 import { Link, useNavigate } from 'react-router-dom';
 import Coin from '../assets/Coin.png';
-import Email from '../assets/Email.png';git 
+import Email from '../assets/Email.png';
 import notice from '../assets/notice.jpg';
 
 const BudgetProgram = () => {

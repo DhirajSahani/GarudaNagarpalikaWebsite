@@ -80,7 +80,7 @@ const Navbar = () => {
         sub:[
         { name: "News & Notices", link: "/notice" },
         { name: "Public Procurement/Tenders Notice", link: "/PublicPTN" },
-        { name: "Acts, Laws & Directives", link: "/notice" },
+        { name: "Acts, Laws & Directives", link: "/ActLaw" },
         { name: "Tax & Fees", link: "/notice" }
        
         ]
@@ -187,6 +187,7 @@ const Navbar = () => {
           </svg>
         </button>
       </nav>
+  
 
       {/* Mobile Menu */}
       {menuOpen && (
@@ -209,7 +210,7 @@ const Navbar = () => {
           </ul>
         </div>
       )}
-
+         
       {/* Desktop Menu */}
       <div className="bg-red-700 text-white p-4 hidden md:block">
         <ul className="flex md:flex-row gap-4 text-base justify-center">
@@ -230,6 +231,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+        
       </div>
 
       {/* News Section */}

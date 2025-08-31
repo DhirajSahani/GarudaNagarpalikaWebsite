@@ -1,9 +1,6 @@
-
 import { Link } from 'react-router-dom';
 import munpic from '../assets/munpic.jpeg';
 import planimg from '../assets/planimg.jpg';
-
-
 
 const Footer = () => {
   const linkSections = [
@@ -64,10 +61,13 @@ const Footer = () => {
       <div className="relative max-w-screen-xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20 py-8 sm:py-12">
         {/* Top section */}
         <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-10">
-          
           {/* Logo & Description */}
           <div className="flex-1 text-center md:text-left">
-            <img className="mx-auto md:mx-0 w-20 md:w-24 lg:w-28 rounded-md shadow" src={munpic} alt="Garuda Municipality Logo" />
+            <img
+              className="mx-auto md:mx-0 w-20 md:w-24 lg:w-28 rounded-md shadow"
+              src={munpic}
+              alt="Garuda Municipality Logo"
+            />
             <p className="text-xs sm:text-sm md:text-base mt-4 leading-relaxed text-gray-200">
               गरुडा नगरपालिका रौतहट जिल्लाका १६ नगरपालिकाहरू मध्ये एक हो। 
               स्थानीय विकास मन्त्रालयले थप ६१ वटा नयाँ नगरपालिका थप्दा रौतहट जिल्लामा 
@@ -82,11 +82,15 @@ const Footer = () => {
           <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center md:text-left">
             {linkSections.map((section, index) => (
               <div key={index}>
-                <h3 className="font-semibold text-white text-sm sm:text-base mb-2 sm:mb-4">{section.title}</h3>
+                <h3 className="font-semibold text-white text-sm sm:text-base mb-2 sm:mb-4">
+                  {section.title}
+                </h3>
                 <ul className="space-y-1 text-xs sm:text-sm text-gray-300">
                   {section.links.map((link, i) => (
                     <li key={i}>
-                      {link.url.startsWith('http') || link.url.startsWith('mailto') || link.url.startsWith('tel') ? (
+                      {link.url.startsWith('http') ||
+                      link.url.startsWith('mailto') ||
+                      link.url.startsWith('tel') ? (
                         <a
                           href={link.url}
                           target="_blank"
@@ -111,11 +115,38 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Google Map Section */}
+        <div className="mt-10">
+          <h3 className="text-center text-sm sm:text-base font-semibold text-yellow-300 mb-3">
+            📍 Our Location
+          </h3>
+          <div className="w-full h-64 sm:h-80 md:h-96 rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              title="Garuda Nagarpalika Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.200849582791!2d85.2809!3d26.8573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ecdd0b4c7f94d7%3A0x6aefb0c5a3e5b90!2sGaruda%20Municipality!5e0!3m2!1sen!2snp!4v1694000000000"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+
         {/* Bottom copyright */}
         <div className="border-t border-gray-500 mt-8 sm:mt-10 pt-3 sm:pt-4 text-center">
           <p className="text-[10px] sm:text-xs md:text-sm text-gray-400">
-            © {new Date().getFullYear()} Garuda Municipality, Rautahat. All rights reserved. Developed by 
-            <a href="https://www.facebook.com/babu.engineer.7" target="_blank" rel="noopener noreferrer" className="hover:underline ml-1 text-yellow-300"> Engineer Dhiraj </a>
+            © {new Date().getFullYear()} Garuda Municipality, Rautahat. All rights reserved.
+            Developed by 
+            <a
+              href="https://www.facebook.com/babu.engineer.7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline ml-1 text-yellow-300"
+            >
+              Engineer Dhiraj
+            </a>
           </p>
         </div>
       </div>

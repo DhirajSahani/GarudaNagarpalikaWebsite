@@ -10,6 +10,7 @@ import PlanProject from "./Pages/PlanProject";
 import BudgetProgram from "./Pages/BudgetProgram";
 import EgovService from "./Pages/EgovService";
 import PublicPTN from "./Pages/PublicPTN";
+import ActLaw from "./Pages/ActLaw";
 
 
 
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/BudgetProgram" element={<BudgetProgram />} />
           <Route path="/EgovService" element={<EgovService />} />
           <Route path="/PublicPTN" element={<PublicPTN />} />
+          <Route path="/ActLaw" element={<ActLaw/>} />
 
 
         </Routes>
