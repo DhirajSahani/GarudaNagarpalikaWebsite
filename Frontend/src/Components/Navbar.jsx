@@ -30,7 +30,7 @@ const Navbar = () => {
 
   // Example translated menu (you can expand for full site text)
   const menuItems = language === "english" ? [
-    { name: "Home", link: "/" },
+    { name: "HomePage", link: "/" },
     {
       name: "Introduction",
       link: "#",
