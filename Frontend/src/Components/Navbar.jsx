@@ -30,7 +30,7 @@ const Navbar = () => {
 
   // Example translated menu (you can expand for full site text)
   const menuItems = language === "english" ? [
-    { name: "HomePage", link: "/" },
+    { name: "Home", link: "/" },
     {
       name: "Introduction",
       link: "#",
@@ -41,21 +41,21 @@ const Navbar = () => {
       ]
     },
     {
-       name: "Ward Profile",
-        link: "/ward-profile",
-           sub: [ 
-          { name: "वडा नं १", link: "/ward-profile/1" },
-          { name: "वडा नं २", link: "/ward-profile/2" },
-          { name: "वडा नं ३", link: "/ward-profile/3" },  
-          { name: "वडा नं ४", link: "/ward-profile/4" },
-          { name: "वडा नं ५", link: "/ward-profile/5" },
-          { name: "वडा नं ६", link: "/ward-profile/6" },
-          { name: "वडा नं ७", link: "/ward-profile/7" },
-          { name: "वडा नं ८", link: "/ward-profile/8" },
-          { name: "वडा नं ९", link: "/ward-profile/9" },
+      name: "Ward Profile",
+      link: "/ward-profile",
+      sub: [
+        { name: "वडा नं १", link: "/ward-profile/1" },
+        { name: "वडा नं २", link: "/ward-profile/2" },
+        { name: "वडा नं ३", link: "/ward-profile/3" },
+        { name: "वडा नं ४", link: "/ward-profile/4" },
+        { name: "वडा नं ५", link: "/ward-profile/5" },
+        { name: "वडा नं ६", link: "/ward-profile/6" },
+        { name: "वडा नं ७", link: "/ward-profile/7" },
+        { name: "वडा नं ८", link: "/ward-profile/8" },
+        { name: "वडा नं ९", link: "/ward-profile/9" },
 
-        ]
-       },
+      ]
+    },
     {
       name: "Programs & Projects",
       link: "#",
@@ -72,35 +72,35 @@ const Navbar = () => {
         { name: "Trimester Progress Report", link: "/reports/financial" },
         { name: "Audit Report", link: "/reports/financial" },
         { name: "Monitoring Report", link: "/reports/financial" },
-          { name: "Public Hearing", link: "/reports/financial" },
-            { name: "Public Aduit", link: "/reports/financial" },
-              { name: "Social Audit", link: "/reports/financial" },
-                { name: "Publications", link: "/reports/financial" }
+        { name: "Public Hearing", link: "/reports/financial" },
+        { name: "Public Aduit", link: "/reports/financial" },
+        { name: "Social Audit", link: "/reports/financial" },
+        { name: "Publications", link: "/reports/financial" }
 
       ]
     },
     {
-       name: "eGov Services",
-        link: "#",
-        sub: [
-          { name: "eGov Services", link: "/EgovService" },
+      name: "eGov Services",
+      link: "#",
+      sub: [
+        { name: "eGov Services", link: "/EgovService" },
         { name: "Vital Registration", link: "/reports/annual" },
         { name: "Social Security", link: "/reports/annual" }
-       ] 
-      },
+      ]
+    },
 
     {
-       name: "Notices & Information",
-        link: "#",
-        sub:[
+      name: "Notices & Information",
+      link: "#",
+      sub: [
         { name: "News & Notices", link: "/notice" },
         { name: "Public Procurement/Tenders Notice", link: "/PublicPTN" },
         { name: "Acts, Laws & Directives", link: "/ActLaw" },
         { name: "Tax & Fees", link: "/notice" }
-       
-        ]
 
-      },
+      ]
+
+    },
     { name: "Gallery", link: "/gallery" },
     { name: "Contact", link: "/contact" },
     { name: "Branches", link: "/branch" },
@@ -116,21 +116,21 @@ const Navbar = () => {
       ]
     },
     {
-       name: "वडा प्रोफाइल",
-        link: "/ward-profile",
-        sub: [ 
-          { name: "वडा नं १", link: "/ward-profile/1" },
-          { name: "वडा नं २", link: "/ward-profile/2" },
-          { name: "वडा नं ३", link: "/ward-profile/3" },  
-          { name: "वडा नं ४", link: "/ward-profile/4" },
-          { name: "वडा नं ५", link: "/ward-profile/5" },
-          { name: "वडा नं ६", link: "/ward-profile/6" },
-          { name: "वडा नं ७", link: "/ward-profile/7" },
-          { name: "वडा नं ८", link: "/ward-profile/8" },
-          { name: "वडा नं ९", link: "/ward-profile/9" },
+      name: "वडा प्रोफाइल",
+      link: "/ward-profile",
+      sub: [
+        { name: "वडा नं १", link: "/ward-profile/1" },
+        { name: "वडा नं २", link: "/ward-profile/2" },
+        { name: "वडा नं ३", link: "/ward-profile/3" },
+        { name: "वडा नं ४", link: "/ward-profile/4" },
+        { name: "वडा नं ५", link: "/ward-profile/5" },
+        { name: "वडा नं ६", link: "/ward-profile/6" },
+        { name: "वडा नं ७", link: "/ward-profile/7" },
+        { name: "वडा नं ८", link: "/ward-profile/8" },
+        { name: "वडा नं ९", link: "/ward-profile/9" },
 
-        ]
-      },
+      ]
+    },
     {
       name: "कार्यक्रम र परियोजना",
       link: "#",
@@ -151,49 +151,49 @@ const Navbar = () => {
       ]
     },
     {
-       name: "सूचना तथा जानकारी",
-        link: "#" ,
-        sub:[
+      name: "सूचना तथा जानकारी",
+      link: "#",
+      sub: [
         { name: "सूचना तथा समाचार", link: "/notice" },
         { name: "सार्वजनिक खरिद/बोलपत्र सूचना", link: "/PublicPTN" },
         { name: "ऐन, कानुन तथा निर्देशिका", link: "/ActLaw" },
         { name: "कर तथा शुल्क", link: "/notice" },
-        { name: " नगर परिषदका निर्णयहरु", link: "/notice" }, 
-        { name: "नगरपालिकाका निर्णयहरु", link: "/notice" }   
-        ]
+        { name: " नगर परिषदका निर्णयहरु", link: "/notice" },
+        { name: "नगरपालिकाका निर्णयहरु", link: "/notice" }
+      ]
 
-      },
-      {
-        name: "विधुतीय शुसासन सेवा",
-        link: "#",
-        sub: [
-          { name: "SMS PORTAL", link: "#" },
-          { name: "Sutra", link: "#" },
-          { name: "Email", link: "#" },
-          { name: "IEMIS", link: "#" },
-          { name: "घटना दर्ता", link: "#" },
-          { name: "सामाजिक सुरक्षा", link: "#" },
-          { name: "नागरिक वडापत्र", link: "#" },
-          { name: "निवेदनको ढाँचा", link: "#" },
-        ]
-      },
+    },
     {
-       name: "ग्यालरी",
-        link: "/gallery",
-        sub: [
-          { name: "फोटो ग्यालरी", link: "/gallery/photos" },
-          { name: "भिडियो ग्यालरी", link: "/gallery/videos" }
-        ]
-       },
+      name: "विधुतीय शुसासन सेवा",
+      link: "#",
+      sub: [
+        { name: "SMS PORTAL", link: "#" },
+        { name: "Sutra", link: "#" },
+        { name: "Email", link: "#" },
+        { name: "IEMIS", link: "#" },
+        { name: "घटना दर्ता", link: "#" },
+        { name: "सामाजिक सुरक्षा", link: "#" },
+        { name: "नागरिक वडापत्र", link: "#" },
+        { name: "निवेदनको ढाँचा", link: "#" },
+      ]
+    },
+    {
+      name: "ग्यालरी",
+      link: "/gallery",
+      sub: [
+        { name: "फोटो ग्यालरी", link: "/gallery/photos" },
+        { name: "भिडियो ग्यालरी", link: "/gallery/videos" }
+      ]
+    },
     { name: "सम्पर्क", link: "/contact" },
     {
-       name: "शाखाहरू",
-        link: "/branch",
-        sub: [
-          { name: "अनुदानग्राही छनौट गरिएको सम्बन्धमा ।", link: "/branch/chief" },
-          { name: "सामाजिक सुरक्षा", link: "/branch/details" }
-        ]
-       },
+      name: "शाखाहरू",
+      link: "/branch",
+      sub: [
+        { name: "अनुदानग्राही छनौट गरिएको सम्बन्धमा ।", link: "/branch/chief" },
+        { name: "सामाजिक सुरक्षा", link: "/branch/details" }
+      ]
+    },
   ];
 
   return (
@@ -259,7 +259,7 @@ const Navbar = () => {
           </svg>
         </button>
       </nav>
-  
+
 
       {/* Mobile Menu */}
       {menuOpen && (
@@ -282,8 +282,8 @@ const Navbar = () => {
           </ul>
         </div>
       )}
-         
-   {/* Desktop Menu */}
+
+      {/* Desktop Menu */}
       <div className="bg-red-700 text-white p-4 hidden md:block">
         <ul className="flex md:flex-row gap-8 text-lg font-semibold justify-center tracking-wide">
           {menuItems.map((item, idx) => (
