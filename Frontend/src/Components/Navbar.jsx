@@ -40,7 +40,22 @@ const Navbar = () => {
         { name: "Staff", link: "/Staff" }
       ]
     },
-    { name: "Ward Profile", link: "/ward-profile" },
+    {
+       name: "Ward Profile",
+        link: "/ward-profile",
+           sub: [ 
+          { name: "वडा नं १", link: "/ward-profile/1" },
+          { name: "वडा नं २", link: "/ward-profile/2" },
+          { name: "वडा नं ३", link: "/ward-profile/3" },  
+          { name: "वडा नं ४", link: "/ward-profile/4" },
+          { name: "वडा नं ५", link: "/ward-profile/5" },
+          { name: "वडा नं ६", link: "/ward-profile/6" },
+          { name: "वडा नं ७", link: "/ward-profile/7" },
+          { name: "वडा नं ८", link: "/ward-profile/8" },
+          { name: "वडा नं ९", link: "/ward-profile/9" },
+
+        ]
+       },
     {
       name: "Programs & Projects",
       link: "#",
@@ -268,18 +283,26 @@ const Navbar = () => {
         </div>
       )}
          
-      {/* Desktop Menu */}
+   {/* Desktop Menu */}
       <div className="bg-red-700 text-white p-4 hidden md:block">
-        <ul className="flex md:flex-row gap-4 text-base justify-center">
+        <ul className="flex md:flex-row gap-8 text-lg font-semibold justify-center tracking-wide">
           {menuItems.map((item, idx) => (
-            <li key={idx} className="relative"
+            <li
+              key={idx}
+              className="relative group"
               onMouseEnter={() => setOpenDropdown(item.name)}
-              onMouseLeave={() => setOpenDropdown(null)}>
-              <Link to={item.link}>{item.name}</Link>
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <Link
+                to={item.link}
+                className="hover:text-yellow-300 transition-colors duration-300"
+              >
+                {item.name}
+              </Link>
               {item.sub && openDropdown === item.name && (
-                <ul className="absolute top-full left-0 bg-black text-white p-2 rounded shadow-md min-w-[150px] z-50">
+                <ul className="absolute top-full left-0 bg-black text-white p-3 rounded-lg shadow-xl min-w-[170px] z-50 animate-fadeIn space-y-2">
                   {item.sub.map((subItem, subIdx) => (
-                    <li key={subIdx} className="p-1 hover:bg-pink-600 rounded">
+                    <li key={subIdx} className="hover:bg-red-600 px-2 py-1 rounded transition">
                       <Link to={subItem.link}>{subItem.name}</Link>
                     </li>
                   ))}
@@ -288,7 +311,6 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        
       </div>
 
       {/* News Section */}
