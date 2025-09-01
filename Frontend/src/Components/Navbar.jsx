@@ -100,7 +100,22 @@ const Navbar = () => {
         { name: "कर्मचारी", link: "/Staff" }
       ]
     },
-    { name: "वडा प्रोफाइल", link: "/ward-profile" },
+    {
+       name: "वडा प्रोफाइल",
+        link: "/ward-profile",
+        sub: [ 
+          { name: "वडा नं १", link: "/ward-profile/1" },
+          { name: "वडा नं २", link: "/ward-profile/2" },
+          { name: "वडा नं ३", link: "/ward-profile/3" },  
+          { name: "वडा नं ४", link: "/ward-profile/4" },
+          { name: "वडा नं ५", link: "/ward-profile/5" },
+          { name: "वडा नं ६", link: "/ward-profile/6" },
+          { name: "वडा नं ७", link: "/ward-profile/7" },
+          { name: "वडा नं ८", link: "/ward-profile/8" },
+          { name: "वडा नं ९", link: "/ward-profile/9" },
+
+        ]
+      },
     {
       name: "कार्यक्रम र परियोजना",
       link: "#",
@@ -113,15 +128,57 @@ const Navbar = () => {
       name: "प्रतिवेदन",
       link: "#",
       sub: [
-        { name: "वार्षिक", link: "/reports/annual" },
-        { name: "वित्तीय", link: "/reports/financial" }
+        { name: "वार्षिक प्रगति प्रतिवेदन", link: "#" },
+        { name: "चौमासिक प्रगति प्रतिवेदन", link: "#" },
+        { name: "लेखा परीक्षण प्रतिवेदन", link: "#" },
+        { name: "सार्वजनिक सुनुवाई", link: "#" },
+        { name: "प्रकाशनहरु", link: "/reports/financial" }
       ]
     },
-    { name: "ई-सरकार सेवा", link: "/egov" },
-    { name: "सूचना तथा जानकारी", link: "/notice" },
-    { name: "ग्यालरी", link: "/gallery" },
+    {
+       name: "सूचना तथा जानकारी",
+        link: "#" ,
+        sub:[
+        { name: "सूचना तथा समाचार", link: "/notice" },
+        { name: "सार्वजनिक खरिद/बोलपत्र सूचना", link: "/PublicPTN" },
+        { name: "ऐन, कानुन तथा निर्देशिका", link: "/ActLaw" },
+        { name: "कर तथा शुल्क", link: "/notice" },
+        { name: " नगर परिषदका निर्णयहरु", link: "/notice" }, 
+        { name: "नगरपालिकाका निर्णयहरु", link: "/notice" }   
+        ]
+
+      },
+      {
+        name: "विधुतीय शुसासन सेवा",
+        link: "#",
+        sub: [
+          { name: "SMS PORTAL", link: "#" },
+          { name: "Sutra", link: "#" },
+          { name: "Email", link: "#" },
+          { name: "IEMIS", link: "#" },
+          { name: "घटना दर्ता", link: "#" },
+          { name: "सामाजिक सुरक्षा", link: "#" },
+          { name: "नागरिक वडापत्र", link: "#" },
+          { name: "निवेदनको ढाँचा", link: "#" },
+        ]
+      },
+    {
+       name: "ग्यालरी",
+        link: "/gallery",
+        sub: [
+          { name: "फोटो ग्यालरी", link: "/gallery/photos" },
+          { name: "भिडियो ग्यालरी", link: "/gallery/videos" }
+        ]
+       },
     { name: "सम्पर्क", link: "/contact" },
-    { name: "शाखाहरू", link: "/branch" },
+    {
+       name: "शाखाहरू",
+        link: "/branch",
+        sub: [
+          { name: "अनुदानग्राही छनौट गरिएको सम्बन्धमा ।", link: "/branch/chief" },
+          { name: "सामाजिक सुरक्षा", link: "/branch/details" }
+        ]
+       },
   ];
 
   return (
